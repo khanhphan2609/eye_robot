@@ -1,0 +1,59 @@
+#happyEye .eye {
+    border: 15px solid var(--primary-color);
+    box-shadow: 0 15px 50px rgba(141, 235, 235, .7), 0 20px 60px rgba(141, 235, 235, .4); /* Bóng đổ màu cam */
+
+}
+#happyEye i {
+    position: absolute;
+    color: white;
+    font-size: 14rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color); /* Hiệu ứng sáng */
+    left: 2vw;
+
+}
+
+#happyEye i.fa-angle-right {
+    transform: rotate(10deg);
+    left: 3vw;
+    animation: scaleUpAndDown .8s ease-in-out infinite;
+}
+
+#happyEye i.fa-angle-left {
+    transform: rotate(-10deg);
+    right: 2vw;
+    animation: scaleUpAndDown .8s ease-in-out infinite;
+}
+
+#happyEye i.fa-circle-notch {
+    font-size: 10rem;
+    margin-top: 1.4vw;
+    animation: rotateIcon 3s linear infinite; /* Add rotation to the icon */
+
+}
+
+@keyframes rotateIcon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg); /* Rotate the icons in a full circle */
+    }
+}
+
+@keyframes scaleUpAndDown {
+    0% {
+        transform: scale(1); /* Normal size */
+    }
+    50% {
+        transform: scale(1.3); /* Scale up to 130% */
+    }
+    100% {
+        transform: scale(1); /* Return to original size */
+    }
+}
+/* 
+.active {
+    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color) !important;
+} */

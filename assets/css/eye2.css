@@ -1,0 +1,51 @@
+
+/* Video nền sẽ được đặt phía dưới tất cả các phần tử khác */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Đảm bảo video nền không che khuất các phần tử khác */
+}
+
+#heartEyes .eye {
+    /* overflow: hidden; */
+    background-color: rgba(237, 95, 133, 0.6);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(237, 95, 133, 0.6)); /* Ánh sáng cam dưới mắt */
+    box-shadow: 0 15px 50px rgba(237, 95, 133, 0.7), 0 20px 60px rgba(237, 95, 133, 0.4); /* Bóng đổ màu cam */
+}
+
+#heartEyes .heart {
+    position: absolute;
+    top: calc(50% - 3vw);
+    width: 50%;
+    height: 50%;
+    background-size: var(--flame-size);
+    background-repeat: no-repeat;
+    transition: background-image 0.1s ease-in-out;
+    filter: brightness(1);
+    background-image: url('/assets/img/heart.png');
+    animation: heartbeat 1s ease-in-out infinite; 
+}
+
+#heartEyes #heart-right {
+    right: calc(50% - 4vw); /* Căn giữa theo chiều dọc */
+}
+
+#heartEyes #heart-left {
+    left: calc(50% - 4vw); /* Căn giữa theo chiều dọc */
+}
+
+/* Animation nhấp nhô cho trái tim */
+@keyframes heartbeat {
+    0%, 100% {
+        opacity: .5;
+        transform: scale(1); /* Trái tim trở về kích thước bình thường */
+    }
+    50% {
+        opacity: 1;
+        transform: scale(2); /* Trái tim phóng to một chút khi nhấp nhô */
+    }
+}
+

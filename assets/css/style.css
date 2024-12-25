@@ -1,0 +1,34 @@
+:root {
+    --primary-color: rgb(141, 235, 235); /* Màu chính */
+    --glow-color: rgba(255, 140, 0, 0.5); /* Màu cam ánh sáng dưới mắt */
+    --secondary-color: #ba3d3d; /* Màu phụ */
+    --lid-color: #333;
+    --iris-color: #00ff00;
+    --sclera-color: #fff;
+    --iris-size: 5vw; /* Kích thước lòng mắt */
+    --eye-size: 15vw; /* Kích thước mắt */
+    --flame-size: 100%; /* Kích thước ngọn lửa */
+    --flame-speed: 2s; /* Tốc độ chuyển động ngọn lửa */
+    --flame-brightness: 1.3; /* Độ sáng của ngọn lửa */
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Điều chỉnh chiều cao của container */
+    background-color: black;
+    justify-content: center; /* Đặt các phần tử con ở giữa theo chiều ngang */
+    align-items: center; /* Đặt các phần tử con ở giữa theo chiều dọc */
+    overflow: hidden; /* Ẩn phần bị thừa */
+}
+
+.eye {
+    position: relative;
+    border-radius: 50%;
+    margin: 10vw;
+    width: var(--eye-size);
+    height: var(--eye-size);
+}

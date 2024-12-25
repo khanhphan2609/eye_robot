@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyes Robot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/eye2.css">
+    <style>
+        .heart i {
+            display: flex;
+            margin: 5vw 0;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            font-size: 5rem;
+            font-weight: bold;
+            height: 100%; 
+            
+            background: linear-gradient(45deg, rgb(0, 0, 0), rgb(237, 95, 133)); 
+            -webkit-background-clip: text; /* Sử dụng gradient làm màu văn bản */
+            -webkit-text-fill-color: transparent; /* Loại bỏ màu nền văn bản */
+        }
+
+    </style>
+</head>
+<body>
+    <section id="heartEyes" class="container">
+        <video autoplay loop muted class="video-background">
+            <source src="/assets/img/heart-bg.mp4" type="video/mp4">
+            <!-- Đảm bảo thay link video bằng video thực tế của bạn -->
+            Your browser does not support the video tag.
+        </video>
+        <div class="eye">
+            <div class="heart" id="heart-left">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+        </div>
+        <div class="eye">
+            <div class="heart" id="heart-right">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+        </div>
+        <div class="heart-bg"></div>
+    </section>
+</body>
+</html>

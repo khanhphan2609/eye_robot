@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinking Eye</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/eye5.css">
+</head>
+<body>
+    <section id="happyEye" class="container">
+        <div class="eye">
+            <!-- <i class="fa-solid fa-angle-right"></i> -->
+            <i class="fa-solid fa-circle-notch circle" data-position="right"></i>
+        </div>
+        <div class="eye">
+            <!-- <i class="fa-solid fa-angle-left"></i> -->
+            <i class="fa-solid fa-circle-notch circle" data-position="left"></i>
+        </div>
+    </section>
+
+    <script>
+        // Get the icons inside each eye
+        const eyes = document.querySelectorAll('#happyEye .eye i');
+
+        // Function to change the icon
+        function changeIcon() {
+            eyes.forEach(eye => {
+                // Get the current position (right or left) from the data-attribute
+                const position = eye.getAttribute('data-position');
+                
+                if (eye.classList.contains('fa-circle-notch')) {
+                    eye.classList.remove('fa-circle-notch');
+                    // Toggle between fa-angle-right and fa-angle-left based on the position
+                    if (position === 'right') {
+                        eye.classList.add('fa-angle-right');
+                    } else {
+                        eye.classList.add('fa-angle-left');
+                    }
+                } else {
+                    eye.classList.remove('fa-angle-right', 'fa-angle-left');
+                    eye.classList.add('fa-circle-notch');
+                }
+            });
+        }
+
+        // Change icon every 2 seconds
+        setInterval(changeIcon, 3000);
+    </script>
+</body>
+</html>
