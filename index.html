@@ -95,10 +95,95 @@
         </div>
     </section>
 
-    <script src="/assets/js/eye3.js"></script>
-    <script src="/assets/js/eye4.js"></script>
-    <script src="/assets/js/eye5.js"></script>
+    <!-- <script src="/assets/js/eye3.js"> -->
 
+    <!-- <script src="/assets/js/eye4.js"></script>
+    <script src="/assets/js/eye5.js"></script> -->
+    <script>
+        // Các đường dẫn hình ảnh ngọn lửa
+        const flameImages = [
+            '/assets/img/fire1.png',  // Hình ảnh ngọn lửa 1
+            '/assets/img/fire2.png',  // Hình ảnh ngọn lửa 2
+        ];
+
+        // Hàm thay đổi ngọn lửa
+        function changeFlame() {
+            const leftFlame = document.getElementById('flame-left');
+            const rightFlame = document.getElementById('flame-right');
+
+            // Lấy chỉ số ngẫu nhiên từ danh sách ảnh ngọn lửa
+            const randomIndex = Math.floor(Math.random() * flameImages.length);
+
+            // Cập nhật background-image của hai mắt
+            leftFlame.style.backgroundImage = `url(${flameImages[randomIndex]})`;
+            rightFlame.style.backgroundImage = `url(${flameImages[randomIndex]})`;
+        }
+
+        // Thay đổi ngọn lửa mỗi 100ms
+        setInterval(changeFlame, 100);
+    </script>
+
+    <!-- JS 4 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const blinkingEyeSection = document.getElementById('blinkingEye'); // Chỉ lấy phần tử với id="blinkingEye"
+            const eyes = blinkingEyeSection.querySelectorAll('.eye');
+            const iris = blinkingEyeSection.querySelectorAll('.iris');
+            const upperLids = blinkingEyeSection.querySelectorAll('.upper-lid');
+            const lowerLids = blinkingEyeSection.querySelectorAll('.lower-lid');
+
+            function blink() {
+                // Đóng mí mắt
+                upperLids.forEach(lid => lid.style.transform = 'scaleY(1)');
+                lowerLids.forEach(lid => lid.style.transform = 'scaleY(1)');
+                eyes.forEach(eye => eye.classList.remove('active'));
+                iris.forEach(eye => eye.classList.remove('active'));
+
+                setTimeout(() => {
+                    // Mở mí mắt
+                    upperLids.forEach(lid => lid.style.transform = 'scaleY(0)');
+                    lowerLids.forEach(lid => lid.style.transform = 'scaleY(0)');
+                    eyes.forEach(eye => eye.classList.add('active'));
+                    iris.forEach(eye => eye.classList.add('active'));
+                }, 1000); // Thời gian giữ mí mắt đóng
+            }
+
+            // Tự động nháy mắt mỗi 3 giây
+            setInterval(blink, 3000);
+        });
+    </script>
+
+    <!-- JS 5 -->
+     <script>
+        // Get the icons inside each eye
+        const eyes = document.querySelectorAll('#happyEye .eye i');
+
+        // Function to change the icon
+        function changeIcon() {
+            eyes.forEach(eye => {
+                // Get the current position (right or left) from the data-attribute
+                const position = eye.getAttribute('data-position');
+                
+                if (eye.classList.contains('fa-circle-notch')) {
+                    eye.classList.remove('fa-circle-notch');
+                    // Toggle between fa-angle-right and fa-angle-left based on the position
+                    if (position === 'right') {
+                        eye.classList.add('fa-angle-right');
+                    } else {
+                        eye.classList.add('fa-angle-left');
+                    }
+                } else {
+                    eye.classList.remove('fa-angle-right', 'fa-angle-left');
+                    eye.classList.add('fa-circle-notch');
+                }
+            });
+        }
+
+        // Change icon every 2 seconds
+        setInterval(changeIcon, 3000);
+     </script>
+
+    <!-- Main JS -->
     <script>
         // Hàm để chuyển đổi giữa các section
         function toggleSections() {
